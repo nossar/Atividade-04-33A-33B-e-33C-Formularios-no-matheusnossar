@@ -1,0 +1,1 @@
+[{"model": "appdomatheus.musicosfavoritos", "pk": 1, "fields": {"nome": "Freddie Mercury", "data_de_nascimento": "1946-09-05", "banda": "Queen", "instrumento": "Voz"}}, {"model": "appdomatheus.bandasfavoritas", "pk": 1, "fields": {"nome": "Iron Maiden", "ano_de_inicio": 1975, "popularidade": 8, "estilo": "P"}}]
