@@ -1,0 +1,33 @@
+<h1>{{ tipo }} Banda</h1>
+
+<form method="post">
+
+{% csrf_token %}
+  
+<div>
+  <label>Nome:</label>
+  <input name="nome" value="{{ banda.nome }}">
+</div>
+
+<div>
+  <label>Ano de Início:</label>
+  <input type="number" name="ano_de_inicio" value="{{ banda.ano_de_inicio }}">
+</div>
+
+<div>
+  <label>Popularidade:</label>
+  <input type="number" name="popularidade" value="{{ banda.popularidade }}">
+</div>
+
+<div>
+  <label>Estilo:</label>
+  <select name="estilo" value="{{ banda.estilo }}">
+      <option value="" selected disabled>Escolha um estilo</option> 
+      <option value="A">Alegre</option>
+      <option value="P">Pesado</option>
+      <option value="T">Triste</option>
+    </select>
+</div>
+
+<input type="submit" value="Registrar">
+</form>

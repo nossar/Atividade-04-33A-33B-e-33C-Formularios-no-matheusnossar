@@ -1,0 +1,91 @@
+"{% load static %}"
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Matheus Nossar de Queiroz Claudio</title>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <h1>Matheus Nossar e seus Músicos Favoritos</h1>
+
+  <p style="text-align: justify;">Em 2018, quando um amigo me mostrou, em tom de brincadeira, por se tratar de algo horrível para ele, uma música da banda formada na Califórnia <a href="https://pt.wikipedia.org/wiki/System_of_a_Down" target="_blank"><i>System of a Down,</i></a> meu interesse por <strong> Rock, Metal </strong>e instrumentos musicais como um todo, foi despertado. Desde então, tenho me interessado por diferentes estilos de músicas com o protagonismo de instrumentos como a <u>Guitarra</u>, o <u>Baixo</u> e a <u>Bateria</u>. Aqui estão alguns dos músicos e bandas de <span style="color:darkred ">extrema relevância </span>para a consolidação da música como um fenomêno mundial, que pode interferir, abalar e transformar a vida de qualquer pessoa.</p>
+
+  <div class="centralize"> 
+  <img src="https://static01.nyt.com/images/2022/05/05/arts/05randy-rhoads/05randy-rhoads-mediumSquareAt3X.jpg" width="250">
+  <p style="text-align: center;"> Randy Rhoads, guitarrista de Ozzy Osbourne em sua carreira solo</p>
+    
+  <img src="https://estaticos.globoradio.globo.com/fotos/2017/10/9a898ec7-7d8f-40c8-83ba-b08fa420c172.jpg.640x360_q75_box-0%2C48%2C2048%2C1198_crop_detail.jpg" width="250">
+  <p style="text-align: center;"> Flea, baixista da banda Red Hot Chilli Peppers</p>
+
+  <img src="https://i.imgur.com/0k0wluY.jpg" width="250">
+  <p style="text-align: center;"> Eu</p>
+    </div>
+
+  <h2>Meus músicos favoritos</h2>
+  
+  <!--<ol>
+    <li>Freddie Mercury, vocalista da banda <i>Queen</i></li>
+    <li>Bruce Dickinson, vocalista da banda <i>Iron Maiden</i></li>
+    <li>Ozzy Osbourne, vocalista da banda <i>Black Sabbath</i></li>
+    <li>Randy Rhoads</li>
+    <li>Flea</li>
+  </ol> -->
+  
+  <ol>
+    {% for musico in musicos_favoritos %}
+    <li> 
+      {{ musico.nome }}
+      <a href="/musicos/update/{{ musico.id }}"> Atualizar</a> 
+      <a href="/musicos/delete/{{ musico.id }}"> Remover</a>
+    </li>
+    {% endfor %}
+  </ol>
+
+   <a href="/musicos">Adicionar Novo Músico</a>
+  
+  <h2>Grandes bandas de rock dos anos 70/80/90</h2>
+  
+  <!-- <ul>
+    <li>Guns & Roses</li>
+    <li>Metallica</li>
+    <li>Iron Maiden</li>
+    <li>Queen</li>
+    <li>Black Sabbath</li>
+  </ul> -->
+
+  <ul>
+   {% for banda in bandas_favoritas %}
+    <li> 
+      {{ banda.nome }} 
+      <a href="/bandas/update/{{ banda.id }}"> Atualizar</a> 
+      <a href="/bandas/delete/{{ banda.id }}"> Remover</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+   <a href="/bandas">Adicionar Nova Banda</a>
+  
+  <h2 style="text-align: center">Instrumentos que eu toco</h2>
+  <table class="centralize""> 
+  <tr>
+    <td>Guitarra</td>
+    <td>Baixo</td>
+  </tr>
+  <tr>
+    <td>Violão</td>
+    <td>Ukulele</td>
+  </tr>
+  </table>
+  </body>
+  
+</html>
